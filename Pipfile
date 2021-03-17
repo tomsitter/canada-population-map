@@ -11,6 +11,7 @@ jupyterlab = "*"
 pandas = "*"
 streamlit = "*"
 pydeck = "*"
+colour = "*"
 
 [requires]
 python_version = "3.7"
