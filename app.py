@@ -14,14 +14,14 @@ def load_data():
     dtype = {'lat': np.float64, 'lon': np.float64}
     data =  pd.read_csv('data/cities.csv', dtype=dtype, converters={f'color_spec_{year}': literal_eval for year in range(2002,2020)})
     for year in range(2002,2020):
-        data['abs_'+str(year)] = data['relative_diff_'+str(year)].abs()*300000
+        data['radius_'+str(year)] = data['scaled_diff_'+str(year)].abs()*250_000
     return data
 
 data = load_data()
 
 st.title("Map of cities of Canada")
 st.write(data)
-year = st.slider("Year", min_value=2002, max_value=2020, value=2002, step=1)
+year = st.slider("Year", min_value=2002, max_value=2019, value=2002, step=1)
 r = pdk.Deck(
     map_style="mapbox://styles/mapbox/light-v9",
     initial_view_state = pdk.ViewState(
@@ -35,7 +35,7 @@ r = pdk.Deck(
         data,
         opacity=0.5,
         get_position=["lon", "lat"],
-        get_radius="abs_" + str(year),
+        get_radius="radius_" + str(year),
         get_fill_color="color_spec_" + str(year),
         pickable=True,
     )],
