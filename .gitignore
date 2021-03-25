@@ -55,5 +55,5 @@ geckodriver.log
 # copied changelog
 docs/source/changelog.md
 
-# big data files
-gis/
+# reference material
+reference/
