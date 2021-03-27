@@ -20,6 +20,8 @@ fiona = "*"
 matplotlib = "*"
 pandas-bokeh = "*"
 pyproj = "*"
+flask = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
