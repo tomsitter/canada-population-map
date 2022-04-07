@@ -4,7 +4,7 @@ This application visualizes changes in the Canadian population over 20 years usi
 
 ## To Install 
 
-I had some issues with installation, used this order:
+I had some issues with dependencies on Windows, but install them individually in this order worked:
 
 ```
 pipenv install wheel
